@@ -31,7 +31,7 @@ def genEnvironment():
             for j in range(-variation, variation+1):
                 neigh3 = (i+j) % size
                 invalids = [i, (i+1)%size,(i-1)%size]
-                # Checking if the new neighbour fits the vriteria and adding it to the dictionary
+                # Checking if the new neighbour fits the criteria and adding it to the dictionary
                 if nodes[neigh3]["degree"] < 3 and neigh3 not in invalids:
                     neighList.append(neigh3)
             if len(neighList)>0:
@@ -123,8 +123,8 @@ def preyMovement(nodes, preyPos, agentPos):
         _type_: int
     """
     preyPathagent = random.choice(BFS(nodes, preyPos, agentPos)["path"])
-    # print(nextSteps)
-    nextStep = preyPathagent
+    print(preyPathagent)
+    nextStep = preyPathagent[1]
     preyPos = nextStep
     return preyPos
 
